@@ -1,10 +1,16 @@
 {
-  "name": "nodebootstraper",
+  "name": "trailhead-students-admin",
   "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "express": "*",
     "jade": "*",
-    "stylus": "*"
+    "stylus": "*",
+    "mongodb": "*",
+    "mongoskin": "*"
   },
   "engines": {
     "node": "0.10.17",

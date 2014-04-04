@@ -1,6 +1,28 @@
 extends layout
 
 block content
-	div.container
-		h1 Program Name
-		p Hello World
+  div.container.page-header
+    h1 Event Manager
+    small Use this page to add, remove, edit, and order events. These events will show up in the events block on <a href="http://trailheadonline.org/students">trailheadonline.org/students</a>
+  div.container
+    div.row
+      div.col-md-8.col-md-offset-2#admin-app
+        if items
+          each item, i in items
+            div.panel.panel-primary
+              div.panel-heading
+                a.item-action(href="javascript:;")
+                  i.fa.fa-arrows.fa-lg
+                div.item-actions.pull-right
+                  a.item-action(href="javascript:;")
+                    i.fa.fa-edit.fa-lg
+                  a.item-action(href="javascript:;")
+                    i.fa.fa-ban.fa-lg
+              div.panel-body
+                strong.item-title= item.title
+                p.item-description= item.description
+        else
+          h1 Some Stuff!
+          div.alert.alert-warning
+            h3 No Events Found
+            p You should probably add some!
