@@ -34,10 +34,12 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index(db));
-// app.get('/itemlist', item.itemlist(db));
+app.get('/event/:id', events.getevent(db));
+app.get('/events', events.listevents(db));
 app.post('/addevent', events.addevent(db));
-// app.delete('/deleteitem/:id', item.deleteitem(db));
+app.delete('/deleteevent/:id', events.deleteevent(db));
 app.put('/sortevent', events.sortevent(db));
+app.put('/editevent', events.editevent(db));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

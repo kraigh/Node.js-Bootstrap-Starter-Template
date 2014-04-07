@@ -22,6 +22,25 @@ div.modal.fade#newEvent
       div.modal-footer
         button.btn.btn-default.pull-left(type="button" data-dismiss="modal") Close
         button.btn.btn-primary.pull-right.event-submit(type="button") Save
+div.modal.fade#editEvent
+  div.modal-dialog
+    div.modal-content
+      div.modal-header
+        button.close(type="button" data-dismiss="modal" aria-hidden="true")
+          i.fa.fa-times
+        h4.modal-title Edit Event
+      div.modal-body
+        form(role="form")
+          div.form-group
+            label(for="eventTitle") Event Title
+            input.form-control#eventTitle(type="text" placeholder="Title")
+          div.form-group
+            label(for="eventDescription") Event Description
+            textarea.form-control#eventDescription(placeholder="Description")
+          input#eventId(type="hidden")
+      div.modal-footer
+        button.btn.btn-default.pull-left(type="button" data-dismiss="modal") Close
+        button.btn.btn-primary.pull-right.event-submit(type="button") Save
 link(rel='stylesheet', href='/css/style.css')
 script(src='/scripts/bootstrap.min.js')
 script(src='/scripts/jquery-ui-1.10.4.custom.min.js')
