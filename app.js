@@ -7,7 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-// var item = require('./routes/item');
+var events = require('./routes/events');
 
 var app = express();
 
@@ -35,9 +35,9 @@ app.configure('development', function(){
 
 app.get('/', routes.index(db));
 // app.get('/itemlist', item.itemlist(db));
-// app.post('/additem', item.additem(db));
+app.post('/addevent', events.addevent(db));
 // app.delete('/deleteitem/:id', item.deleteitem(db));
-// app.put('/edititem', item.edititem(db));
+app.put('/sortevent', events.sortevent(db));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

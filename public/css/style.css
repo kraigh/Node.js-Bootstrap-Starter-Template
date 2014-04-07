@@ -1,5 +1,8 @@
 .item-action {
-  color: #FFFFFF;
-  margin-left: 6px;
-  margin-right: 6px;
+  color: #fff;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.item-action:hover {
+  color: #e6e6e6;
 }
