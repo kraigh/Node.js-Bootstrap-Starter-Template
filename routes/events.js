@@ -28,6 +28,8 @@ exports.getevent = function(db) {
 exports.listevents = function(db) {
   return function(req, res) {
     db.collection('eventlist').find().toArray(function (err, items) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,      Accept");
       res.json(items);
     })
   }
